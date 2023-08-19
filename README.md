@@ -1,3 +1,7 @@
+# aliens-go-rumah
+Simple shooter game developed using React, mostly for my own self-learning on using React. The tutorial is based on [this consecutive series on the auth0 blog](https://auth0.com/blog/developing-games-with-react-redux-and-svg-part-1/). 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
