@@ -1,5 +1,5 @@
 import {
-    createInterval, flyingObjectsStarterYAxis, maxFlyingObjects, flyingObjectsStarterXAxis
+    createInterval, flyingObjectsStarterYAxis, maxFlyingObjects, flyingObjectStarterPositions
 } from '../utils/constants'
 
 export default (state) => {
@@ -15,7 +15,7 @@ export default (state) => {
 
     const id = (new Date()).getTime();
     const predefinedPosition = Math.floor(Math.random() * maxFlyingObjects);
-    const flyingObjectPosition = flyingObjectsStarterXAxis[predefinedPosition];
+    const flyingObjectPosition = flyingObjectStarterPositions[predefinedPosition];
     const newFlyingObject = {
         position: {
             x: flyingObjectPosition,
