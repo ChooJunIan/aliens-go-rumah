@@ -10,6 +10,8 @@ import FlyingObject from './FlyingObject';
 import Heart from './Heart';
 import StartGame from './StartGame';
 import Title from './Title';
+import Login from './Login';
+import { signIn } from 'auth0-web';
 
 const Canvas = (props) => {
     const gameHeight = 1200;
@@ -37,21 +39,9 @@ const Canvas = (props) => {
                 <g>
                     <StartGame onClick={() => props.startGame()} />
                     <Title />
+                    <Login authenticate={signIn} />
                 </g>
             }
-
-            {/* { props.gameState.started && 
-                <g> 
-                    <FlyingObject position={{x: -150, y: -300}} />
-                </g>
-
-            } */}
-
-            {/* <CannonBall position={{x: 0, y: -100}} />
-            <FlyingObject position = {{x: 0, y: -200}} />
-            <Heart position = {{x: -300, y: 35}} />
-            <StartGame onClick={() => console.log('Aliens, Go Rumah!')} />
-            <Title /> */}
 
             {props.gameState.flyingObjects.map(flyingObject => (
                 <FlyingObject

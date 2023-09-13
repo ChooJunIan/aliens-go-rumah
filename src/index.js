@@ -23,7 +23,7 @@ import { createStore } from 'redux';
 import './index.css';
 import Game from './containers/Game';
 import reducer from './reducers';
-// import * as serviceWorker from './serviceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
@@ -40,6 +40,4 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.unregister();
-}
+registerServiceWorker();
