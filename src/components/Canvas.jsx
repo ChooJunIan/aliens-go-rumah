@@ -10,12 +10,20 @@ import FlyingObject from './FlyingObject';
 import Heart from './Heart';
 import StartGame from './StartGame';
 import Title from './Title';
-import Login from './Login';
+import Leaderboard from './Leaderboard';
 import { signIn } from 'auth0-web';
 
 const Canvas = (props) => {
     const gameHeight = 1200;
     const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight];
+    const leaderboard = [
+        { id: 'd4', maxScore: 82, name: 'Willie Poh', picture: 'https://twitter.com/HardDriveMag/status/1664617872323141635/photo/1',},
+        { id: 'a6', maxScore: 100, name: 'Tharshen', picture: 'https://twitter.com/Whemn1/status/1664625017403985923/photo/1',},
+        { id: '3t', maxScore: 28, name: 'WeiJie', picture: 'https://twitter.com/9to5mac/status/1701752096045896123/photo/1',},
+        { id: '71', maxScore: 37, name: 'Aiken', picture: 'https://twitter.com/DaniDevYT/status/1701650631948214393/photo/1',},
+        { id: 'h1', maxScore: 42, name: 'JunYing', picture: 'https://twitter.com/laufey/status/1701886713398788223/photo/1',},
+        { id: '0a', maxScore: 61, name: 'Janelle', picture: 'https://twitter.com/URedditor/status/1701668946389156205/photo/2',},
+    ]
 
     return (
         <svg 
@@ -39,7 +47,7 @@ const Canvas = (props) => {
                 <g>
                     <StartGame onClick={() => props.startGame()} />
                     <Title />
-                    <Login authenticate={signIn} />
+                    <Leaderboard currentPlayer = {leaderboard[0]} authenticate={signIn} leaderboard={leaderboard} />
                 </g>
             }
 
